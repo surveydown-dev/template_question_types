@@ -36,7 +36,7 @@ ui <- sd_ui()
 
 server <- function(input, output, session) {
   # Define any conditional skip logic here (skip to page if a condition is true)
-  sd_skip_forward(
+  sd_skip_if(
     input$skip_to_page == "end" ~ "end",
     input$skip_to_page == "question_formatting" ~ "question_formatting"
   )
