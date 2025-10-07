@@ -295,56 +295,73 @@ sd_next()
 
 > On this page, we'll demonstrate some of the formatting options for displaying questions.
 
-#### Markdown is supported for the question label
+#### Markdown is supported for question labels and options
 
-The `label` argument for any question type can accept markdown formatting. For example, the question below uses the `**` symbols to make some works bold:
+The `label` for all question types and the `option` for all **multiple choice** types accept markdown formatting.
+
+Here's an example of `mc` with markdown formatting:
 
 ```{r}
 sd_question(
-  id     = 'markdown_label',
+  id     = 'markdown_1',
   type   = 'mc',
   label  = "**This** is a question *label* supporting ***markdown***:",
   option = c(
-    "Option A" = "option_a",
-    "Option B" = "option_b",
-    "Option C" = "option_c"
+    "*Italic option*" = "italic",
+    "**Bold option**" = "bold",
+    "***Bold italic option***" = "bold_italic"
   )
 )
 ```
 
-#### Markdown is supported for options in `mc_buttons` questions
-
-For `mc_button` type questions, you can also use markdown to format the `option` labels:
+Here's an example of `mc_multiple` with markdown formatting:
 
 ```{r}
 sd_question(
-  id     = 'markdown_buttons',
+  id     = 'markdown_2',
+  type   = 'mc_multiple',
+  label  = "**This** is a question *label* supporting ***markdown***:",
+  option = c(
+    "*Italic option*" = "italic",
+    "**Bold option**" = "bold",
+    "***Bold italic option***" = "bold_italic"
+  )
+)
+```
+
+Here's an example of `mc_buttons` with markdown formatting:
+
+```{r}
+sd_question(
+  id     = 'markdown_3',
   type   = 'mc_buttons',
-  label  = "The 3 options below support markdown:",
+  label  = "**This** is a question *label* supporting ***markdown***:",
   option = c(
-    "*Option A*"     = "option_a",
-    "**Option B**"   = "option_b",
-    "***Option C***" = "option_c"
+    "*Italic option*" = "italic",
+    "**Bold option**" = "bold",
+    "***Bold italic option***" = "bold_italic"
   )
 )
 ```
 
-The same is true for `mc_multiple_buttons`:
+Here's an example of `mc_multiple_buttons` with markdown formatting:
 
 ```{r}
 sd_question(
-  id     = 'markdown_multiple_buttons',
+  id     = 'markdown_4',
   type   = 'mc_multiple_buttons',
-  label  = "The 3 options below support markdown:",
+  label  = "**This** is a question *label* supporting ***markdown***:",
   option = c(
-    "*Option A*"     = "option_a",
-    "**Option B**"   = "option_b",
-    "***Option C***" = "option_c"
+    "*Italic option*" = "italic",
+    "**Bold option**" = "bold",
+    "***Bold italic option***" = "bold_italic"
   )
 )
 ```
 
-#### HTML is also supported for options of `mc_buttons` and `mc_multiple_buttons`, so that you can insert mixed content including plain text, markdown, and HTML images. For example, here is a question with some complex labels for a choice question:
+#### HTML is supported in `mc_buttons` and `mc_multiple_buttons`
+
+HTML is also supported for options of `mc_buttons` and `mc_multiple_buttons`, so that you can insert mixed content including plain text, markdown, and HTML images. For example, here is a question with some complex labels for a choice question:
 
 ```{r}
 # Define the option vector
