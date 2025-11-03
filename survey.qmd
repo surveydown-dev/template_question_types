@@ -27,7 +27,7 @@ required-questions:
 library(surveydown)
 ```
 
-::: {.sd_page id=welcome}
+--- welcome
 
 # Template - Question Types
 
@@ -50,9 +50,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=question_types}
+--- question_types
 
 # Question types
 
@@ -287,9 +285,7 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=question_formatting}
+--- question_formatting
 
 # Question formatting
 
@@ -406,14 +402,10 @@ sd_question(
 sd_next()
 ```
 
-:::
-
-::: {.sd_page id=end}
+--- end
 
 ## Thanks for taking our survey!
 
 ```{r}
 sd_close("Exit This Survey")
 ```
-
-:::
