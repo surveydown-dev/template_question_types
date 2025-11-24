@@ -1,26 +1,25 @@
 ---
-# General Settings
-format: html
-echo: false
-warning: false
+# The YAML header specifies several settings for the survey but is not required.
+# A full list of settings can be found under _survey/settings.yml directory.
 
-# Theme Settings
-theme: default
-barposition: top
-footer-left: "Made with [surveydown](https://surveydown.org)"
-footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_question_types)'
+theme-settings:
+  theme: default
+  barposition: top
+  footer-left: "Made with [surveydown](https://surveydown.org)"
+  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_question_types)'
 
-# Survey Settings
-use-cookies: false
-auto-scroll: false
-rate-survey: false
-system-language: en
-highlight-unanswered: true
-highlight-color: blue
-capture-metadata: true
-all-questions-required: false
-required-questions:
-  - skip_to_page
+survey-settings:
+  show-previous: false
+  use-cookies: false
+  auto-scroll: false
+  rate-survey: false
+  system-language: en
+  highlight-unanswered: true
+  highlight-color: blue
+  capture-metadata: true
+  all-questions-required: false
+  required-questions:
+    - skip_to_page
 ---
 
 ```{r}
@@ -46,8 +45,6 @@ sd_question(
     'Skip to the end' = 'end'
   )
 )
-
-sd_next()
 ```
 
 --- question_types
@@ -55,7 +52,6 @@ sd_next()
 # Question types
 
 This page showcases the different types of question supported by `{surveydown}`. Each question requires the user to define the following arguments to the `sd_question()` function:
-
 
 - `id`: A unique identifier for the question, which will be used as the variable name in the resulting survey data.
 - `label`: The label that will be displayed on the question in the survey.
@@ -238,7 +234,7 @@ sd_question(
   type = "slider_numeric",
   label = 'Range example',
   option = seq(0, 10, 1),
-  default = c(3, 5)
+  default = c(3, 7)
 )
 ```
 
@@ -279,10 +275,6 @@ sd_question(
     "Agree"    = "agree"
   )
 )
-```
-
-```{r}
-sd_next()
 ```
 
 --- question_formatting
@@ -398,8 +390,6 @@ sd_question(
   label = "This text area has width set as 40%:",
   width = "40%"
 )
-
-sd_next()
 ```
 
 --- end
@@ -407,5 +397,5 @@ sd_next()
 ## Thanks for taking our survey!
 
 ```{r}
-sd_close("Exit This Survey")
+sd_close()
 ```
