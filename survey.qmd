@@ -64,11 +64,15 @@ This page showcases the different types of question supported by `{surveydown}`.
     - `mc_buttons`: Same as `mc` but as a "button" style instead of radio buttons.
     - `mc_multiple`: Multiple choice with mutliple select options (check boxes).
     - `mc_multiple_buttons`: Same as `mc_multiple` but as a "button" style instead of check boxes.
+    - `mc_image`: Same as `mc` but each option is a clickable image card (single select).
+    - `mc_multiple_image`: Same as `mc_multiple` but each option is a clickable image card (multiple select).
     - `select`: Select a choice from a dropdown menu.
     - `slider`: Slider to select discrete categories or continuous numbers.
+    - `slider_numeric`: Slider to select a single number or a numeric range.
     - `date`: Select a date from a calendar widget.
     - `daterange`: Select two dates from calendar widgets (e.g. begin and end dates).
     - `matrix`: Several questions with same list of options. Each question is in fact an `mc` question.
+    - `matrix_multiple`: Same as `matrix` but each row allows multiple selections. Each question is in fact an `mc_multiple` question.
 
 #### Use `type = 'text'` to specify a text input type question:
 
@@ -180,6 +184,50 @@ sd_question(
 )
 ```
 
+#### Use `type = 'mc_image'` to specify a single choice question with image options:
+
+Each option is a clickable image card. Provide an `image` vector (one image path or URL per option, in the same order as `option`). Image paths resolve against the survey's `images/` folder. When the `option` vector is **named**, the names are shown as text captions beneath each image.
+
+```{r}
+sd_question(
+  id     = 'apple_image',
+  type   = 'mc_image',
+  label  = "Which apple variety looks most appealing?",
+  option = c(
+    "Fuji"       = "fuji",
+    "Pink Lady"  = "pink_lady",
+    "Honeycrisp" = "honeycrisp"
+  ),
+  image = c(
+    "images/fuji.jpg",
+    "images/pink_lady.jpg",
+    "images/honeycrisp.jpg"
+  )
+)
+```
+
+#### Use `type = 'mc_multiple_image'` to specify a multiple choice question with image options:
+
+Same as `mc_image` but multiple cards can be selected. Here the `option` vector is **unnamed**, so the images are shown with no captions (the values are still stored in the data).
+
+```{r}
+sd_question(
+  id     = 'apple_buy',
+  type   = 'mc_multiple_image',
+  label  = "Which apples would you buy (select all that apply)?",
+  option = c(
+    "Fuji"       = "fuji",
+    "Pink Lady"  = "pink_lady",
+    "Honeycrisp" = "honeycrisp"
+  ),
+  image = c(
+    "images/fuji.jpg",
+    "images/pink_lady.jpg",
+    "images/honeycrisp.jpg"
+  )
+)
+```
+
 #### Use `type = 'select'` to specify a drop down select type question:
 
 ```{r}
@@ -274,6 +322,27 @@ sd_question(
     "Disagree" = "disagree",
     "Neutral"  = "neutral",
     "Agree"    = "agree"
+  )
+)
+```
+
+#### Use `type = 'matrix_multiple'` to specify a matrix input where each row allows multiple selections:
+
+Same as `matrix`, but each row uses check boxes instead of radio buttons, so respondents can select more than one option per row. Each row is stored as its own column, with multiple selections pipe-joined (e.g. `"fast|cheap"`).
+
+```{r}
+sd_question(
+  id     = "vehicle_features",
+  type   = "matrix_multiple",
+  label  = "Which features matter to you for each vehicle type (select all that apply)?",
+  row    = c(
+    "Gasoline car" = "gasoline",
+    "Electric car" = "ev"
+  ),
+  option = c(
+    "Affordable" = "affordable",
+    "Fast"       = "fast",
+    "Eco-friendly" = "eco_friendly"
   )
 )
 ```
