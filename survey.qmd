@@ -208,7 +208,7 @@ sd_question(
 
 #### Use `type = 'mc_multiple_image'` to specify a multiple choice question with image options:
 
-Same as `mc_image` but multiple cards can be selected. Here the `option` vector is **unnamed**, so the images are shown with no captions (the values are still stored in the data).
+Same as `mc_image` but multiple cards can be selected. As with `mc_image`, naming the `option` vector shows the names as text captions beneath each image.
 
 ```{r}
 sd_question(
