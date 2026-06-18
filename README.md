@@ -1,6 +1,16 @@
-A template showcasing all built-in [question types](https://surveydown.org/docs/question-types).
+A template showcasing all built-in question types.
 
-To create this template, run this command in your R console:
+### 🟢 Demo
+
+Try the live survey: https://surveydown-question-types.share.connect.posit.cloud
+
+### Template page
+
+https://surveydown.org/templates/question_types
+
+### Create this template
+
+Run this command in your R console:
 
 ```r
 surveydown::sd_create_survey(
@@ -9,4 +19,6 @@ surveydown::sd_create_survey(
 )
 ```
 
-Refer to the [Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template) section for more details.
+### Documentation
+
+[Question types](https://surveydown.org/docs/question-types) · [Start with a template](https://surveydown.org/docs/getting-started#start-with-a-template)
