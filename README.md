@@ -4,13 +4,11 @@ A template showcasing all built-in question types.
 
 Try the live survey: https://surveydown-question-types.share.connect.posit.cloud
 
-### 🎬 Video
+### 🎬 Walkthrough Recording
 
-A video walkthrough of this template:
+[![Walkthrough recording](video-thumbnail.jpg)](https://github.com/surveydown-dev/template_question_types/blob/main/video-recording.mp4)
 
-<video src="https://github.com/surveydown-dev/template_question_types/raw/main/video-recording.mp4" controls width="100%"></video>
-
-[▶ Watch the walkthrough](https://github.com/surveydown-dev/template_question_types/raw/main/video-recording.mp4)
+*Click the image above to play the recording.*
 
 ### Template page
 
