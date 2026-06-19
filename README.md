@@ -6,7 +6,7 @@ Try the live survey: https://surveydown-question-types.share.connect.posit.cloud
 
 ### 🎬 Walkthrough Recording
 
-[![Walkthrough recording](video-thumbnail.png)](https://cdn.jsdelivr.net/gh/surveydown-dev/template_question_types@main/video-recording.mp4)
+[![Walkthrough recording](video-thumbnail.png)](https://cdn.jsdelivr.net/gh/surveydown-dev/template_question_types@8e001f4e0999a0ce805b78dbeece29d0a10ab26e/video-recording.mp4)
 
 *Click the image above to play the recording.*
 
