@@ -4,9 +4,7 @@ A template showcasing all built-in question types.
 
 ### See it in action
 
-**Live demo:** https://surveydown-question-types.share.connect.posit.cloud
-
-**Walkthrough recording:**
+Play with the [**Live demo:**](https://surveydown-question-types.share.connect.posit.cloud) or watch the **Walkthrough recording:**
 
 [![Walkthrough recording](video-thumbnail.png)](https://cdn.jsdelivr.net/gh/surveydown-dev/template_question_types@8e001f4e0999a0ce805b78dbeece29d0a10ab26e/video-recording.mp4)
 
